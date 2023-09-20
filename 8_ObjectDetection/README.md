@@ -1,0 +1,1 @@
+# 8. (20 points) Object Detection (Please put the classified images as part of your submission)
