@@ -5,11 +5,11 @@ import sys
 import pandas as pd
 
 # Put in the location of the video file that has to be processed
-location_videofile = "/content/Video_One.mp4"
+location_videofile = "content/Video_One.mp4"
 
 # Build the Face detection detector
 face_detector = FER(mtcnn=True)
-# Input the video for processing
+# Input the video for 
 input_video = Video(location_videofile)
 
 # The Analyze() function will run analysis on every frame of the input video. 
