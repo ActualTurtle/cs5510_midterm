@@ -1,0 +1,3 @@
+[submodule "4_LAMS/4/LAMS/CameraCalibration"]
+	path = 4_LAMS/4/LAMS/CameraCalibration
+	url = git@github.com:niconielsen32/CameraCalibration.git
