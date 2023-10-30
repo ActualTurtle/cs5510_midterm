@@ -1,5 +1,6 @@
 from roboflow import Roboflow
 import pathlib
+import json
 
 '''
 Part A
@@ -15,13 +16,20 @@ model = project.version(5).model
 
 
 count = 0
+data = {}
 img_dir = "img/grocerystore"
 for image_path in pathlib.Path(img_dir).glob('*.jpg'):
     if (count >= NUM_IMAGES):
         break
     img_name = str(image_path).split("/")[2].split(".")[0]
-    print(img_name)
-    model.predict(str(image_path)).save(f"part_a_classifications/img/{img_name}_prediction.jpg")
+
+    pred = model.predict(str(image_path))
+    data[img_name] = pred.json()
+    pred.save(f"part_a_classifications/img/{img_name}_prediction.jpg")
     count += 1
+
+
+with open("part_a_classifications/classifications.json", 'w') as json_file:
+    json.dump(data, json_file)
 
 print(f"Classified {count} Images")
