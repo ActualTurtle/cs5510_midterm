@@ -7,6 +7,8 @@ Part A
 
 Using a Roboflow 2.0 classification algorithm https://universe.roboflow.com/popular-benchmarks/mit-indoor-scene-recognition, 
 classify first 100 images in 'img/grocerystore', images from https://universe.roboflow.com/popular-benchmarks/mit-indoor-scene-recognition
+
+images save in "part_a_classifications/img"
 '''
 
 NUM_IMAGES = 100
