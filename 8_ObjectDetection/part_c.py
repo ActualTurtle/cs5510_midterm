@@ -3,13 +3,12 @@ import time
 import json
 import platform
 import psutil
-from ultralytics import YOLO
+import torch
 
 '''
 This script will be used to generate analysis data on different machines
 '''
-
-model_v8 = YOLO("yolov8n.pt")
+model_v5 = torch.hub.load("ultralytics/yolov5", "yolov5s")
 
 # Images
 img_dir = "img/grocerystore"
@@ -25,7 +24,7 @@ for img in images:
 
     data["cpu"]["percents"].append(psutil.cpu_percent())
     starttime = time.time()
-    model_v8(img)
+    model_v5(img)
     data["fps"]["times"].append(time.time() - starttime)
 
 data["cpu"]["average"] = sum(data["cpu"]["percents"]) / len(data["cpu"]["percents"])
