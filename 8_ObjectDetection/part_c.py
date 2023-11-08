@@ -20,12 +20,20 @@ data["cpu"]["percents"] = []
 data["fps"] = {}
 data["fps"]["times"] = []
 
+frames = 0
+totaltime = 0
+cpusnaps = []
+
 for img in images:
 
-    data["cpu"]["percents"].append(psutil.cpu_percent())
+    frames += 1
+    cpusnaps.append(psutil.cpu_percent())
+    data["cpu"]["percents"].append(sum(cpusnaps) / len (cpusnaps))
     starttime = time.time()
-    model_v5(img)
-    data["fps"]["times"].append(time.time() - starttime)
+    model_v5(img) # run yolov5
+    deltatime = time.time() - starttime
+    totaltime += deltatime
+    data["fps"]["times"].append(frames / totaltime) # currenlt average  frames per second
 
 data["cpu"]["average"] = sum(data["cpu"]["percents"]) / len(data["cpu"]["percents"])
 data["fps"]["average"] = sum(data["fps"]["times"]) / len(data["fps"]["times"])
