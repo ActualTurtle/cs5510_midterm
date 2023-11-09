@@ -25,7 +25,7 @@ for cpu_stats_source in stats["cpu"]:
 
 plt.xlabel("Image/Frames")
 plt.ylabel("CPU Usage %")
-plt.title("CPU performance")
+plt.title("Average CPU %")
 plt.legend()
 plt.show()
 
@@ -35,6 +35,6 @@ for fps_stats_source in stats["fps"]:
   
 plt.xlabel("Image/Frame")
 plt.ylabel("Seconds")
-plt.title("FPS/time performance")
+plt.title("Average FPS")
 plt.legend()
 plt.show()

@@ -8,7 +8,7 @@ import torch
 '''
 This script will be used to generate analysis data on different machines
 '''
-model_v5 = torch.hub.load("ultralytics/yolov5", "yolov5s")
+model_v5 = torch.hub.load("ultralytics/yolov5", "yolov5n")
 
 # Images
 img_dir = "img/grocerystore"
