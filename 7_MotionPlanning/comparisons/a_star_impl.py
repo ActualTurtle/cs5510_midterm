@@ -64,7 +64,7 @@ def astar(maze, start, end):
             node_position = (currentNode.position[0] + new_position[0], currentNode.position[1] + new_position[1])
 
             # Check if node position is valid
-            if node_position[0] < maze['start'][0] or node_position[0] > maze['end'][0] or node_position[1] < maze['start'][1] or node_position[1] > maze['end'][1]:
+            if node_position[0] < maze['min_x_y'][0] or node_position[0] > maze['max_x_y'][0] or node_position[1] < maze['min_x_y'][1] or node_position[1] > maze['max_x_y'][1]:
                 continue
 
             # check if node is on obstacle
@@ -102,18 +102,18 @@ def main():
     for i in range(20, 60):
         obstacles.add((40, i))
 
-    m_start = (-10, -10)
-    m_end = (60,60)
-    maze = { 'start': m_start, 'end': m_end, 'obstacles': obstacles }
+    maze_min_x_y = (-10, -10)
+    maze_max_x_y = (60,60)
+    maze = { 'min_x_y': maze_min_x_y, 'max_x_y': maze_max_x_y, 'obstacles': obstacles }
     # maze = Maze(m_start, m_end, obstacles)
 
     start = (10,10)
-    end = (50,50)
+    goal = (50,50)
 
     print("running")
     before = time.time()
 
-    path = astar(maze, start, end)
+    path = astar(maze, start, goal)
 
     after = time.time()
     print(f"done in {after - before:.3f} seconds")

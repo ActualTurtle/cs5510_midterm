@@ -14,7 +14,7 @@ sys.path.append(str(pathlib.Path(__file__).parent.parent))
 
 from rrt import RRT
 
-show_animation = True
+show_animation = False
 
 
 class RRTStar(RRT):

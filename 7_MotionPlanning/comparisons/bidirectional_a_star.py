@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 
 import time
 
-show_animation = True
+show_animation = False
 
 
 class BidirectionalAStarPlanner:

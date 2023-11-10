@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import math
 import time
 
-show_animation = True
+show_animation = False
 
 
 class Dijkstra:
