@@ -7,7 +7,6 @@ Required Packages:
 * scikit-learn
 
 
-
 ## FER Performance
 Desktop test: 134.15 seconds
 * CPU: Ryzen 3 3200G 3.6 GHz
