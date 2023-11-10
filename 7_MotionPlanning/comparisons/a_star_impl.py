@@ -1,3 +1,5 @@
+# implemented based on the a-star guide from Nicholas Swift (https://medium.com/@nicholas.w.swift/easy-a-star-pathfinding-7e6689c7f7b2)
+
 import time
 
 class Node():
@@ -14,12 +16,6 @@ class Node():
     def __eq__(self, other):
         return self.position == other.position
     
-    # def __repr__(self):
-    #     return str(self.position)
-    
-    # def __hash__(self):
-    #     return hash(repr(self))
-
     def __str__(self):
         return f"Pos: {self.position}"
         
@@ -68,11 +64,11 @@ def astar(maze, start, end):
             node_position = (currentNode.position[0] + new_position[0], currentNode.position[1] + new_position[1])
 
             # Check if node position is valid
-            if node_position[0] < maze.start[0] or node_position[0] > maze.end[0] or node_position[1] < maze.start[1] or node_position[1] > maze.end[1]:
+            if node_position[0] < maze['min_x_y'][0] or node_position[0] > maze['max_x_y'][0] or node_position[1] < maze['min_x_y'][1] or node_position[1] > maze['max_x_y'][1]:
                 continue
 
             # check if node is on obstacle
-            if node_position in maze.obstacles:
+            if node_position in maze['obstacles']:
                 continue
 
             # create new node
@@ -106,17 +102,18 @@ def main():
     for i in range(20, 60):
         obstacles.add((40, i))
 
-    m_start = (-10, -10)
-    m_end = (60,60)
-    maze = Maze(m_start, m_end, obstacles)
+    maze_min_x_y = (-10, -10)
+    maze_max_x_y = (60,60)
+    maze = { 'min_x_y': maze_min_x_y, 'max_x_y': maze_max_x_y, 'obstacles': obstacles }
+    # maze = Maze(m_start, m_end, obstacles)
 
     start = (10,10)
-    end = (50,50)
+    goal = (50,50)
 
     print("running")
     before = time.time()
 
-    path = astar(maze, start, end)
+    path = astar(maze, start, goal)
 
     after = time.time()
     print(f"done in {after - before:.3f} seconds")
