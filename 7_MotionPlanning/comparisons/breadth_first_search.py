@@ -12,8 +12,6 @@ import math
 
 import matplotlib.pyplot as plt
 
-import time
-
 show_animation = False
 
 
@@ -247,12 +245,9 @@ def main():
         plt.grid(True)
         plt.axis("equal")
 
-    before = time.time()
     bfs = BreadthFirstSearchPlanner(ox, oy, grid_size, robot_radius)
     rx, ry = bfs.planning(sx, sy, gx, gy)
 
-    after = time.time()
-    print(f"done in {after - before:.3f} seconds")
 
     if show_animation:  # pragma: no cover
         plt.plot(rx, ry, "-r")
