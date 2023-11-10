@@ -3,7 +3,7 @@ import pathlib
 import json
 
 '''
-Using json data generated from part_c.py, stored in "/part_c_data" plots, plots perfomance 
+Using json data generated from performanceCheck.py, stored in "data/" plots, plots perfomance 
 '''
 
 
