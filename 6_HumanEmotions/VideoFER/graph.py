@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-frame = pd.read_csv("data2.csv")
+frame = pd.read_csv("data.csv")
 plt.plot(frame['angry0'], label="Angry")
 plt.plot(frame['disgust0'], label="Disgust")
 plt.plot(frame['fear0'], label="Fear")
