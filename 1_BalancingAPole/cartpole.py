@@ -4,17 +4,9 @@ Copied from http://incompleteideas.net/sutton/book/code/pole.c
 permalink: https://perma.cc/C9ZM-652R
 """
 import math
-from typing import Optional, Union
-
-import numpy as np
-
-import gym
-from gym import logger, spaces
-from gym.envs.classic_control import utils
-from gym.error import DependencyNotInstalled
 
 
-class CartPoleEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
+class CartPoleObj():
     """
     Modified version of cartpole from https://github.com/openai/gym/blob/master/gym/envs/classic_control/cartpole.py
     with zero rendering.
@@ -45,9 +37,9 @@ class CartPoleEnv(gym.Env[np.ndarray, Union[int, np.ndarray]]):
         self.theta_dot = 0
 
 
-    def step(self, action):
+    def step(self):
  
-        force = self.force_mag if action == 1 else -self.force_mag
+        force = self.force_mag
         costheta = math.cos(self.theta)
         sintheta = math.sin(self.theta)
 
