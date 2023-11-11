@@ -1,6 +1,9 @@
 # 3a. Implement the monocular velocity detection algorithm
-## Capture and process data
 
+## Install dependencies
+``` pip install -r /mono_velocity/requirements.txt ```
+
+## Capture and process data
 Run 
 
 ``` /capture_process_data/record_image_clips.py --r```
@@ -16,12 +19,13 @@ https://pjreddie.com/media/files/yolov3.weights
 
 
 Run 
+| :exclamation:  Was not able to successfully run   |
+|-----------------------------------------|
 
 With the file update with proper paths
 
 ``` test_crop_velocity.py ``` 
 
-#### Ran into issues trying to run
 
 # 3b. Implement the Monocular Odometry algorithm
 
@@ -30,7 +34,7 @@ There are multiple ways to run the monocular odometry algorithm.
 * image clips
 
 ## Install dependencies
-``` pip install -r requirements.txt ```
+``` pip install -r /Monocular Odemetry/requirements.txt ```
 
 ## Live camera feed
 To run
@@ -38,7 +42,7 @@ To run
 
 When you first run the script it will look for a calibration file in the directory if it doesn't find the calibration file it will start running a calibration script. The calibration script will keep scanning for images with a 9 x 6 chessboard pattern. 
 
-Once it has calibrated it will start running the visual odemetry from the live camera feed for a set amount of images. 
+Once it has calibrated it will start running the visual odometry from the live camera feed for a set amount of images. 
 
 ## Image clips
 To run
