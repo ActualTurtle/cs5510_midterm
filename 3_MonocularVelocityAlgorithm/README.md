@@ -28,6 +28,9 @@ There are multiple ways to run the monocular odometry algorithm.
 * live camera feed
 * image clips
 
+## Install dependencies
+``` pip install -r requirements.txt ```
+
 ## Live camera feed
 To run
 ``` visual_odemetry_live_camera_feed.py ```
