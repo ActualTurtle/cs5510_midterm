@@ -7,7 +7,7 @@ maxAngleFound = False
 
 while not maxAngleFound:
 
-    # angle before step/force is applied
+    # angle before step/force is applied 
     theta_0 = cart.theta
 
     # Double step to account for a float edge case
