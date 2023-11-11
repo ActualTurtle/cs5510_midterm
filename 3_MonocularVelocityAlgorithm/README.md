@@ -21,6 +21,7 @@ With the file update with proper paths
 
 ``` test_crop_velocity.py ``` 
 
+#### Ran into issues trying to run
 
 # 3b. Implement the Monocular Odometry algorithm
 
