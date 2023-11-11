@@ -1,5 +1,11 @@
 # 8. (20 points) Object Detection (Please put the classified images as part of your submission)
 
+to install dependencies
+```
+pip install -r requirements.txt
+```
+
+
 ### (a) (5 points) Classify the 100 images in the Store category from https://web.mit.edu/torralba/www/indoor.html using any image classification algorithm (not YOLO). ultralytics/yolo5
 
 See [```part_a.py```](part_a.py)
