@@ -1,5 +1,5 @@
 # cs5510_midterm
 
-Main latex/pdf in root, question specific code located in appropriate directory
+For each question, if there was a code portion required the code will be in the respective folder.
 
-LATEX -> https://www.overleaf.com/1495544772fmthrgspzqyr
+Follow the instructions in the `README`s and install any required dependencies from the `requirements.txt` files.
